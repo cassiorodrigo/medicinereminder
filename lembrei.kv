@@ -1,0 +1,117 @@
+ScreenManager:
+    Main:
+        name:'Main'
+
+    AddPills:
+        name: 'AddPills'
+
+
+<Main>:
+    AnchorLayout:
+        anchor_x:'left'
+        anchor_y:'top'
+        MDToolbar:
+            title: "Lembrai-me"
+        GridLayout:
+            padding:50
+            cols:1
+            rows:7
+            id:dias
+            BoxLayout:
+                spacing:50
+                MDIconButton:
+                    icon:'img/reemedio.jpg'
+                    on_press:self.icon = 'img/remedio tomado.jpg'
+                    on_press: root.remedio_tomado(self.parent.children[0].text)
+                MDLabel:
+                    text:'Segunda-Feira'
+            BoxLayout:
+                spacing:50
+                MDIconButton:
+                    icon:'img/reemedio.jpg'
+                    on_press:self.icon = 'img/remedio tomado.jpg'
+                    on_press: root.remedio_tomado(self.parent.children[0].text)
+                MDLabel:
+                    text:'Terça-Feira'
+            BoxLayout:
+                spacing:50
+                MDIconButton:
+                    icon:'img/reemedio.jpg'
+                    on_press:self.icon = 'img/remedio tomado.jpg'
+                    on_press: root.remedio_tomado(self.parent.children[0].text)
+                MDLabel:
+                    text:'Quarta-Feira'
+            BoxLayout:
+                spacing:50
+                MDIconButton:
+                    icon:'img/reemedio.jpg'
+                    on_press:self.icon = 'img/remedio tomado.jpg'
+                    on_press: root.remedio_tomado(self.parent.children[0].text)
+                MDLabel:
+                    text:'Quinta-Feira'
+            BoxLayout:
+                spacing:50
+                MDIconButton:
+                    icon:'img/reemedio.jpg'
+                    on_press:self.icon = 'img/remedio tomado.jpg'
+                    on_press: root.remedio_tomado(self.parent.children[0].text)
+
+                MDLabel:
+                    text:'Sexta-Feira'
+            BoxLayout:
+                spacing:50
+                MDIconButton:
+                    icon:'img/reemedio.jpg'
+                    on_press:self.icon = 'img/remedio tomado.jpg'
+                    on_press: root.remedio_tomado(self.parent.children[0].text)
+                MDLabel:
+                    text:'Sábado'
+            BoxLayout:
+                spacing:50
+                MDIconButton:
+                    icon:'img/reemedio.jpg'
+                    on_press:self.icon = 'img/remedio tomado.jpg'
+                    on_press: root.remedio_tomado(self.parent.children[0].text)
+                MDLabel:
+                    text:'Domingo'
+
+
+        AnchorLayout:
+            anchor_x:'right'
+            anchor_y:'bottom'
+            padding:60
+            MDFloatingActionButton:
+                icon:'reload'
+                on_press: for e in dias.children: e.children[1].icon = 'img/reemedio.jpg'
+                on_press: root.resetar_semana()
+
+
+<AddPills>:
+#    GridLayout:
+#        rows:3
+#        MDToolbar:
+#            title: "Lembrai-me"
+#        GridLayout:
+#            cols:2
+#            rows:1
+#            BoxLayout:
+#                id:dias
+#                orientation:'vertical'
+#            ScrollView:
+#                MDList:
+#                    id: remedios
+#                    OneLineAvatarListItem:
+#                        text:'oi'
+#                        ImageLeftWidget:
+#                            source:'img/reemedio.jpg'
+#        BoxLayout:
+#            size_hint_y:0.15
+#            MDTextField:
+#                id:medicine_name
+#                on_text_validate: root.add_medicine(self.text)
+#                on_text_validate: root.remedios_a_tomar(7)
+#            MDFloatingActionButton:
+#                on_press: root.add_medicine(medicine_name.text)
+
+
+
